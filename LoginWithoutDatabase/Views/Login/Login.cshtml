@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+<!-- Message d'erreur si les identifiants sont incorrects -->
+@if (ViewBag.ErrorMessage != null)
+{
+    <div style="color: red;">@ViewBag.ErrorMessage</div>
+}
+
+<!-- Formulaire de login -->
+<form method="post" action="/Login/Login">
+    <!-- Email input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="text" id="username" name="username" class="form-control" required />
+        <label class="form-label" for="username">Username</label>
+    </div>
+
+    <!-- Password input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="password" id="password" name="password" class="form-control" required />
+        <label class="form-label" for="password">Password</label>
+    </div>
+
+
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+
+</form>
